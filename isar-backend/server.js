@@ -7,26 +7,27 @@ const connectDB = require('./config/db'); // ⬅️ New MongoDB connection
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// ✅ Correct: Use only **configured** CORS
+app.use(cors({
+  origin: 'https://www.isaar.in', // ✅ your real GoDaddy domain
+  credentials: true // ✅ if you use cookies or sessions
+}));
+
 app.use(express.json());
 app.use(bodyParser.json());
 
 // Connect MongoDB
-connectDB(); // ⬅️ Connect to MongoDB
+connectDB();
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+
 app.get('/ping', (req, res) => {
   res.send('pong');
 });
-
-app.use(cors({
-  origin: 'https://www.isaar.in', // 👈 your real GoDaddy domain
-  credentials: true // if you send cookies or sessions
-}));
-
 
 app.use('/api/auth', authRoutes);
 app.use('/api/payment', paymentRoutes);
