@@ -10,9 +10,10 @@ const app = express();
 
 // ✅ Correct: Use only **configured** CORS
 app.use(cors({
-  origin: 'https://www.isaar.in', // ✅ your real GoDaddy domain
-  credentials: true // ✅ if you use cookies or sessions
+  origin: ['https://isaar.in', 'https://www.isaar.in'],
+  credentials: true
 }));
+
 
 app.use(express.json());
 app.use(bodyParser.json());
