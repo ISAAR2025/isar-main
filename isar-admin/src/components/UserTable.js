@@ -16,22 +16,34 @@ const UserTable = () => {
       .catch(err => console.error('User fetch error:', err));
   }, []);
 
-  const filteredUsers = users.filter(user =>
-    user.name?.toLowerCase().includes(search.toLowerCase()) ||
-    user.email?.toLowerCase().includes(search.toLowerCase())
-  );
+const filteredUsers = users.filter(
+  (user) => {
+    const name = user.name || "";
+    const email = user.email || "";
+    const userId = user._id !== undefined ? user._id.toString() : "";
+    return (
+      name.toLowerCase().includes(search.toLowerCase()) ||
+      email.toLowerCase().includes(search.toLowerCase()) ||
+      userId.includes(search)
+    );
+  }
+);
+
+
+
 
   return (
     <div className="user-table-container">
       <h2>Registered Users</h2>
 
-      <input
-        type="text"
-        placeholder="Search by name or email..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="search-input"
-      />
+     <input
+  type="text"
+  placeholder="Search by ID, name, or email..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  className="search-input"
+/>
+
 
       {/* Desktop Table View */}
       <table className="user-table">
@@ -62,8 +74,9 @@ const UserTable = () => {
         {filteredUsers.map((user, idx) => (
           <div className="user-card" key={user.id}>
             <h4>{user.name}</h4>
+            <p><strong>USER ID:</strong>{user._id}</p>
             <p><strong>Email:</strong> {user.email}</p>
-            <p><strong>Registered:</strong> {new Date(user.created_at).toLocaleString()}</p>
+            <p><strong>Registered:</strong> {new Date(user.createdAt).toLocaleString()}</p>
           </div>
         ))}
       </div>

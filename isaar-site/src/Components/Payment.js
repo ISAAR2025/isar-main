@@ -10,6 +10,8 @@ const Payment = () => {
   const [finalDiscount, setFinalDiscount] = useState(null);
   const [appliedDiscount, setAppliedDiscount] = useState(null);
   const [discountApplied, setDiscountApplied] = useState(false);
+  const [gstAmount, setGstAmount] = useState(0);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,19 +36,27 @@ const Payment = () => {
 
     if (coupon.trim().toUpperCase() === 'ISAR10') {
       bonusDiscount = 10;
-      alert('✅ Coupon ISAR10 applied (10% OFF)');
+      alert('Coupon ISAR10 applied (10% OFF)');
     } else {
       bonusDiscount = Math.floor(Math.random() * 6) + 5; // 5–10%
-      alert(`🎉 Lucky Discount Applied: ${bonusDiscount}%`);
+      alert(` Discount Applied: ${bonusDiscount}%`);
     }
 
     const totalDiscount = discount + bonusDiscount;
     const discounted = price - (price * totalDiscount) / 100;
 
+    const gst = (discounted * 2.5) / 100;
+    const finalAmount = discounted + gst;
+
     setFinalDiscount(totalDiscount);
     setAppliedDiscount(bonusDiscount);
-    setFinalPrice(discounted);
+    setGstAmount(gst);
+    setFinalPrice(finalAmount);
     setDiscountApplied(true);
+
+    alert(
+      `✅ GST (2.5%) added: ₹${gst.toFixed(2)}\nTotal Payable: ₹${finalAmount.toFixed(2)}`
+    );
   };
 
   const loadRazorpay = async () => {
@@ -119,7 +129,6 @@ const Payment = () => {
                   date: new Date().toISOString(),
                 },
               });
-              
 
               navigate('/dashboard');
             } else {
@@ -143,12 +152,12 @@ const Payment = () => {
         alert('Something went wrong during payment.');
       }
     };
-    if (!course) {
-  console.error("❌ course is undefined");
-  alert("Something went wrong, please try again.");
-  return;
-}
 
+    if (!course) {
+      console.error('❌ course is undefined');
+      alert('Something went wrong, please try again.');
+      return;
+    }
 
     script.onerror = () => {
       alert('Failed to load Razorpay SDK');
@@ -175,9 +184,10 @@ const Payment = () => {
 
         {appliedDiscount !== null && (
           <>
-            <p><strong>{coupon.toUpperCase() === 'ISAR10' ? "Coupon Discount" : "Lucky Discount"}:</strong> {appliedDiscount}%</p>
+            <p><strong>{coupon.trim().toUpperCase() === 'ISAR10' ? 'Coupon Discount' : 'Lucky Discount'}:</strong> {appliedDiscount}%</p>
             <p><strong>Total Discount:</strong> {finalDiscount}%</p>
-            <p><strong>Final Price:</strong> ₹{finalPrice.toFixed(2)}</p>
+            <p><strong>GST (2.5%):</strong> ₹{gstAmount.toFixed(2)}</p>
+            <p><strong>Final Price (incl. GST):</strong> ₹{finalPrice.toFixed(2)}</p>
           </>
         )}
 
@@ -195,7 +205,7 @@ const Payment = () => {
           className="apply-btn"
           disabled={discountApplied}
         >
-          {discountApplied ? "✅ Discount Applied" : "Apply Discount"}
+          {discountApplied ? '✅ Discount Applied' : 'Apply Discount'}
         </button>
 
         <button

@@ -55,7 +55,7 @@ body {
   text-align: center;
 }
 
-.btn {
+.ebtn {
   padding: 12px 24px;
   background-color: #ff6600;
   color: white;
@@ -390,12 +390,16 @@ body {
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 500px) and (max-width: 1600px){
+  .ebtn {
+    display: none;
+  }
+}
+@media (min-width: 500px){
   .hero-description {
     display: none;
   }
 }
-
 /* Fullscreen section */
 .hs {
   display: flex;
@@ -583,11 +587,15 @@ body {
 }
 
 .htt {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #1a1a1a;
 }
-
+.ht {
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.5;
+}
 .hdd {
   font-size: 1rem;
   color: #555;

@@ -5,13 +5,20 @@ import Spline from '@splinetool/react-spline';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-import gallery1 from '../Screenshot 2025-05-27 124214.png';
-import gallery2 from '../Screenshot 2025-05-27 124242.png';
-import gallery3 from '../Screenshot 2025-05-27 124300.png';
-import gallery4 from '../Screenshot 2025-05-27 124339.png';
-import gallery5 from '../Screenshot 2025-05-27 124339.png';
+import gallery1 from '../G1.JPG';
+import gallery2 from '../g2.JPG';
+import gallery3 from '../g3.JPG';
+import gallery4 from '../g4.JPG';
+import gallery5 from '../g5.JPG';
 import gallery6 from '../Screenshot 2025-05-27 124356.png';
-import gallery7 from '../Screenshot 2025-05-27 124412.png';
+import gallery7 from '../g6.JPG';
+import gallery8 from '../g7.JPG';
+import gallery9 from '../g8.JPG';
+import gallery10 from '../g9.JPG';
+import gallery11 from '../g10.JPG';
+import gallery12 from '../g11.JPG';
+import gallery13 from '../g12.JPG';
+
 
 
 import imageStudents from '../s8.jpg';
@@ -27,7 +34,6 @@ import img5 from '../D5.jpeg';
 import img6 from '../D6.jpeg';
 
 import img7 from '../G20.jpeg';
-import img8 from '../FMR.jpeg';
 import img9 from '../CGG.jpeg';
 import img10 from '../AM.jpeg';
 import img11 from '../UL.jpeg';
@@ -47,6 +53,12 @@ const Hero = () => {
     { type: 'image', src: gallery5 },
     { type: 'image', src: gallery6 },
     { type: 'image', src: gallery7 },
+    { type: 'image', src: gallery8 },
+    { type: 'image', src: gallery9 },
+    { type: 'image', src: gallery10 },
+    { type: 'image', src: gallery11 },
+    { type: 'image', src: gallery12 },
+    { type: 'image', src: gallery13 },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -131,7 +143,7 @@ const Hero = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <button className="btn" onClick={handleServicesClick}>
+            <button className="ebtn" onClick={handleServicesClick}>
               Explore Our Services
             </button>
           </motion.div>
@@ -171,7 +183,7 @@ const Hero = () => {
           content: (
             <>
             <ul>
-                <li>Drone Pilot Certification</li>
+
                 <li>Robotics Workshops.</li>
                 <li>Aerospace Projects.</li>
                 <li>Industrial Surveys.</li>
@@ -212,7 +224,7 @@ const Hero = () => {
         <section className="hs" data-aos="fade-up">
         <img src={bannerImage} alt="ISAR Banner" className="highlight-image"  />
         <div className="hc">
-          <h2 className="ht">Global Investors Summit 2025 – Madhya Pradesh</h2>
+          <h2 className="gt">Global Investors Summit 2025 – Madhya Pradesh</h2>
           <p className="hd">
             We are proud to be part of Madhya Pradesh’s journey towards becoming a global investment destination. Our Chairman’s engagement with Dr Mohan Yadav the Hon’ble Chief Minister of Madhya Pardesh reflects our commitment to contributing to the state’s economic growth and innovation ecosystem
           </p>
@@ -258,42 +270,23 @@ The visit aligns with the company’s commitment to developing cutting-edge solu
     <img src={img7} alt="ISAR Banner" className="hii" />
     <div className="hcc">
       <h2 className="htt">G20 Summit 2023 – India</h2>
-      <p className="hdd">
-        Being part of G20 under India’s leadership was an honor and a responsibility to shape global outcomes for the better.
-      </p>
-    </div>
-  </div>
 
-  <div className="hss" data-aos="fade-up" data-aos-delay="100">
-    <img src={img8} alt="ISAR Banner" className="hii" />
-    <div className="hcc">
-      <h2 className="htt">Empowering the Future of Aerospace</h2>
-      <p className="hdd">
-        At ISAR, we provide cutting-edge training and tools to shape the next generation 
-        of aerospace engineers and roboticists. Join us in building a smarter, skyward future.
-      </p>
     </div>
   </div>
 
   <div className="hss" data-aos="fade-up" data-aos-delay="200">
     <img src={img9} alt="ISAR Banner" className="hii" />
     <div className="hcc">
-      <h2 className="htt">Empowering the Future of Aerospace</h2>
-      <p className="hdd">
-        At ISAR, we provide cutting-edge training and tools to shape the next generation 
-        of aerospace engineers and roboticists. Join us in building a smarter, skyward future.
-      </p>
+      <p className="ht">Ms. Praveena D.K., IAS: Vice Chairperson & Managing Director, Gujarat Industrial Development Corporation (GIDC). </p>
+      
     </div>
   </div>
 
   <div className="hss" data-aos="fade-up" data-aos-delay="200">
     <img src={img10} alt="ISAR Banner" className="hii" />
     <div className="hcc">
-      <h2 className="htt">Empowering the Future of Aerospace</h2>
-      <p className="hdd">
-        At ISAR, we provide cutting-edge training and tools to shape the next generation 
-        of aerospace engineers and roboticists. Join us in building a smarter, skyward future.
-      </p>
+      <p className="ht">Our Chairperson Meets Jagdish Vishwakarma, Hon’ble Minister for Cottage, Khadi and Rural Industries, Gujarat </p>
+      
     </div>
   </div>
 

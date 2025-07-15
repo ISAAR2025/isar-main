@@ -176,5 +176,13 @@ router.post('/verify-payment', async (req, res) => {
     });
   }
 });
+// your existing POST routes above...
 
+// ✅ new GET route for admin payments:
+router.get('/admin/payments', async (req, res) => {
+  // ... same code as above ...
+});
+
+// ✅ keep exporting your router:
 module.exports = router;
+

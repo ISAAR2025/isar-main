@@ -82,7 +82,7 @@ const About = () => (
     <img src={valuesImage} alt="Core Values" className="zigzag-img" />
     <div className="zigzag-text" data-aos="zoom-in-up">
       <h3>Our Core Values</h3>
-      <p>At INDIAN SCIENTIFIC AEROSPACE AND ROBOTICS, we uphold integrity, innovation, and excellence in all aspects of our training programs. We are committed to providing a nurturing environment that fosters learning and growth.
+      <p>At INDIAN SCIENTIFIC AEROSPACE AND ROBOTICS, we uphold integrity, innovation, and excellence in all aspects of our learning  programs. We are committed to providing a nurturing environment that fosters learning and growth.
 
 
 </p>

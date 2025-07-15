@@ -38,13 +38,29 @@ const Services = () => {
   };
 
   const courseMap = {
-    'Young Learners': {
+    'Beginner Course': {
       price: 2,
       discount: 0,
       image: Advanced,
       seoContent: (
         <div>
-          <p>At ISAR, we believe early exposure to STEM education sparks lifelong curiosity. Our <strong>Young Learners program</strong> is crafted for kids aged 8–12, combining <strong>interactive drone flying</strong>, <strong>basic robotics</strong>, and <strong>coding fundamentals</strong> through hands-on activities and fun workshops.</p>
+          <p className="intro">
+            Take flight with our Beginner’s Drone Course — ideal for students and hobbyists. Learn drone basics, aerodynamics, DIY building, safe flying, and real-world uses. Finish with the skills to design, build, and fly your own drone.
+          </p>
+          <p><strong>Join us and turn your curiosity into capability — and your capability into opportunity.</strong></p>
+          <h2>What You’ll Learn:</h2>
+          <ul className="learn-list">
+            <li> <strong>Fundamentals:</strong> How drones fly, their components, and their future applications.</li>
+            <li> <strong>Design:</strong> Frame, motor, propeller, power source, payload, and controller selection tailored to your mission.</li>
+            <li> <strong>Build:</strong> Step-by-step guidance to assemble, test, and troubleshoot your own drone.</li>
+            <li> <strong>Innovate:</strong> Insights into sector-specific drone use — from agriculture to emergency response to delivery.</li>
+            <li> <strong>Comply:</strong> Up-to-date understanding of global and DGCA (India) drone regulations.</li>
+          </ul>
+          <h2>Why It Matters:</h2>
+          <p>
+            Drones are transforming industries worldwide — agriculture, logistics, surveillance, filmmaking, and beyond.
+            This course equips you with the foundational skills to participate in and contribute to this exciting revolution.
+          </p>
         </div>
       )
     },
@@ -54,17 +70,41 @@ const Services = () => {
       image: Young,
       seoContent: (
         <div>
-          <p>The <strong>Junior High program</strong> bridges playful learning and structured drone education. Designed for ages 13–15, it introduces <strong>drone safety</strong>, <strong>manual and automated flight control</strong>, <strong>aerodynamics</strong>, and <strong>simple robotics</strong> using real-world applications.</p>
+          <p>The <strong>Junior High program</strong> To Enroll this course contact us:<br />
+            <strong>Contact Number: +91 6374720788<br />Email: admin@isaar.in</strong>
+          </p>
         </div>
       )
     },
-    'Senior High': {
-      price: 14999,
+    'Professional and Industrial Course': {
+      price: 19999,
       discount: 0,
       image: Junior,
       seoContent: (
         <div>
-          <p>ISAR’s <strong>Senior High Program</strong> goes beyond basics into <strong>advanced flight simulation</strong>, <strong>GPS mapping</strong>, <strong>autonomous drone navigation</strong>, and <strong>robotics prototyping</strong>. Perfect for students pursuing careers in <strong>aerospace</strong>, <strong>AI</strong>, or <strong>mechanical engineering</strong>.</p>
+          <p className="intro">
+            Master the future of drones with our Advanced UAV Course — for engineers, pros, and enthusiasts. Dive into advanced aerodynamics, AI navigation, swarming, payloads, and mission planning. Build, optimize, and deploy high-performance UAVs for industrial missions using cutting-edge tech. Lead the way in precision drones and real-time operations.
+          </p>
+          <p className="highlight">
+            <strong>📦 Walk away with the drone worth 10,000/-</strong>
+          </p>
+          <h2>What You’ll Learn:</h2>
+          <ul className="learn-list">
+            <li> <strong>Advanced Flight Dynamics:</strong> UAV stability, control algorithms, and environmental effects.</li>
+            <li> <strong>Autonomous Systems:</strong> Programming GPS-based and vision-based navigation using ArduPilot/PX4 and ROS.</li>
+            <li> <strong>Professional Drone Design:</strong> Configuring UAVs for heavy-lift, endurance, or multi-role missions with industry-grade components.</li>
+            <li> <strong>Payload & Sensor Integration:</strong> Incorporating LiDAR, thermal cameras, multispectral sensors, and telemetry systems.</li>
+            <li> <strong>Mission Planning & Simulation:</strong> Hands-on simulation classes using Mission Planner, QGroundControl, Gazebo, and other professional tools.</li>
+            <li><strong>Mapping & Surveying:</strong> Create accurate 2D maps and 3D models using photogrammetry, flight planning, and post-processing tools like ArcGIS.</li>
+            <li> <strong>Regulatory & Operational Mastery:</strong> Advanced understanding of DGCA/FAA/ICAO frameworks, BVLOS permissions, and safety protocols.</li>
+          </ul>
+          <h2>Why It Matters:</h2>
+          <p>
+            Drones are no longer just tools — they’re strategic assets. This course equips you to lead innovation across 
+            defense, disaster management, precision agriculture, surveying, and smart city applications. 
+            You’ll gain real-world skills, industry insights, and the confidence to operate, design, and deploy UAVs at a 
+            professional level — unlocking opportunities in the fast-growing drone industry.
+          </p>
         </div>
       )
     },
@@ -74,7 +114,26 @@ const Services = () => {
       image: senior,
       seoContent: (
         <div>
-          <p>ISAR’s <strong>Advanced Training program</strong> is built for <strong>engineering students</strong>, <strong>researchers</strong>, and <strong>working professionals</strong> seeking <strong>industrial-grade drone and robotics training</strong>.</p>
+          <p className="intro">
+            Master the future of drones with our Advanced UAV Course — for engineers, pros, and enthusiasts. Dive into advanced aerodynamics, AI navigation, swarming, payloads, and mission planning. Build, optimize, and deploy high-performance UAVs for industrial missions using cutting-edge tech. Lead the way in precision drones and real-time operations.
+          </p>
+          <h2>What You’ll Learn:</h2>
+          <ul className="learn-list">
+            <li> <strong>Advanced Flight Dynamics:</strong> UAV stability, control algorithms, and environmental effects.</li>
+            <li> <strong>Autonomous Systems:</strong> Programming GPS-based and vision-based navigation using ArduPilot/PX4 and ROS.</li>
+            <li> <strong>Professional Drone Design:</strong> Configuring UAVs for heavy-lift, endurance, or multi-role missions with industry-grade components.</li>
+            <li> <strong>Payload & Sensor Integration:</strong> Incorporating LiDAR, thermal cameras, multispectral sensors, and telemetry systems.</li>
+            <li> <strong>Mission Planning & Simulation:</strong> Hands-on simulation classes using Mission Planner, QGroundControl, Gazebo, and other tools.</li>
+            <li> <strong>Mapping & Surveying:</strong> Capture, process, and analyze drone data for accurate maps and models with tools like ArcGIS.</li>
+            <li> <strong>Regulatory & Operational Mastery:</strong> Master DGCA/FAA/ICAO frameworks, BVLOS permissions, and safety protocols.</li>
+          </ul>
+          <h2>Why It Matters:</h2>
+          <p>
+            Drones are no longer just tools — they’re strategic assets. This course equips you to lead innovation across 
+            defense, disaster management, precision agriculture, surveying, and smart city applications. 
+            You’ll gain real-world skills, industry insights, and the confidence to operate, design, and deploy UAVs at a 
+            professional level — unlocking opportunities in the fast-growing drone industry.
+          </p>
         </div>
       )
     },
@@ -109,7 +168,6 @@ const Services = () => {
     }
 
     if (price === 0) {
-      // Free enrollment
       fetch(`${process.env.REACT_APP_API_URL}/api/auth/enroll`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -136,7 +194,6 @@ const Services = () => {
           alert("Something went wrong. Please try again.");
         });
     } else {
-      // Paid course – go to payment page
       localStorage.setItem('selectedCourse', JSON.stringify(selected));
       navigate('/payment');
     }
@@ -149,11 +206,10 @@ const Services = () => {
         ISAR is a premier institute providing innovative research and consultancy solutions to empower industries and academia. 
         We specialize in bridging the gap between research and practical applications.
       </p>
-      <h3 className="sta">Fly High ,Spend Low ,Transform India from the sky 
-      </h3>
+      <h3 className="sta">Fly High, Spend Low, Transform India from the sky</h3>
 
       <div className="about-grid">
-        {Object.entries(courseMap).map(([course, { image, price, discount, seoContent }], index) => {
+        {Object.entries(courseMap).map(([course, { image, price, discount }], index) => {
           const isEnrolled = enrolledCourses.includes(course) || course === 'Junior High';
 
           return (
@@ -163,32 +219,36 @@ const Services = () => {
                 <h3>{course}</h3>
                 <p>Price: ₹{price} | Discount: {discount}%</p>
                 {course !== 'Junior High' && (
-                <button
-                  className="enroll-btn"
-                  onClick={() => handleEnroll(course)}
-                  disabled={isEnrolled}
-                  style={{ backgroundColor: isEnrolled ? '#ccc' : '#2B72FB', cursor: isEnrolled ? 'not-allowed' : 'pointer' }}
-                >
-                  {isEnrolled ? "✅ Enrolled" : "Enroll Now"}
-                </button>)}
+                  <button
+                    className="enroll-btn"
+                    onClick={() => handleEnroll(course)}
+                    disabled={isEnrolled}
+                    style={{
+                      backgroundColor: isEnrolled ? '#ccc' : '#2B72FB',
+                      cursor: isEnrolled ? 'not-allowed' : 'pointer'
+                    }}
+                  >
+                    {isEnrolled ? "✅ Enrolled" : "Enroll Now"}
+                  </button>
+                )}
                 <button
                   className="syllabus-btn"
                   onClick={() => toggleDetails(course)}
                 >
                   {visibleDetails === course ? "Hide Details" : "View Details"}
                 </button>
-                {visibleDetails === course && (
-                  <div className="syllabus-list">
-                    {seoContent}
-                  </div>
-                )}
               </div>
             </div>
           );
         })}
       </div>
 
-     
+      {visibleDetails && (
+        <div className="syllabus-details-full">
+          <h2>Course Details: {visibleDetails}</h2>
+          <div>{courseMap[visibleDetails].seoContent}</div>
+        </div>
+      )}
 
       <Helmet>
         <title>INDIAN SCIENTIFIC AEROSPACE AND ROBOTICS</title>

@@ -193,7 +193,62 @@ button.enroll-btn:hover {
 }
 
 /* Optional: Emoji style */
-.syllabus-list li::before {
-  content: '📘';
-  margin-right: 6px;
+/* ==========================================
+   Syllabus full details block below courses
+   ========================================== */
+
+.syllabus-details-full {
+  margin: 60px auto 0;
+  max-width: 1000px;
+  background: #f0f8ff;
+  border: 1px solid #b3e5fc;
+  border-radius: 10px;
+  padding: 30px;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.syllabus-details-full h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #1a237e;
+  margin-bottom: 20px;
+}
+
+.syllabus-details-full p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.syllabus-details-full ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.syllabus-details-full li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+
+/* Optional: highlight class for callouts */
+.syllabus-details-full .highlight {
+  background: #fff9c4;
+  padding: 10px 15px;
+  border-left: 4px solid #ffeb3b;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .syllabus-details-full {
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .syllabus-details-full h2 {
+    font-size: 22px;
+  }
 }
