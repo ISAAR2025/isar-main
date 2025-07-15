@@ -18,6 +18,9 @@ connectDB(); // ⬅️ Connect to MongoDB
 const authRoutes = require('./routes/authRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+app.get('/ping', (req, res) => {
+  res.send('pong');
+});
 
 app.use('/api/auth', authRoutes);
 app.use('/api/payment', paymentRoutes);
