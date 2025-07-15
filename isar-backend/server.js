@@ -22,6 +22,12 @@ app.get('/ping', (req, res) => {
   res.send('pong');
 });
 
+app.use(cors({
+  origin: 'https://www.isaar.in', // 👈 your real GoDaddy domain
+  credentials: true // if you send cookies or sessions
+}));
+
+
 app.use('/api/auth', authRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/admin', adminRoutes);
