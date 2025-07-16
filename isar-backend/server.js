@@ -10,7 +10,7 @@ const app = express();
 
 // ✅ Correct: Use only **configured** CORS
 app.use(cors({
-  origin: ['https://isaar.in', 'https://www.isaar.in'],
+  origin: ['https://isaar.in', 'https://www.isaar.in','https://admin.isaar.in','https://isar-main.onrender.com'],
   credentials: true
 }));
 
