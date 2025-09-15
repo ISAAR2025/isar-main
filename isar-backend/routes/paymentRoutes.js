@@ -148,7 +148,7 @@ router.post('/verify-payment', async (req, res) => {
     // ✅ Save payment
     const newPayment = new Payment({
       user_id: finalUserId,
-      course_name: finalCourseName,
+      title: course_name,  // ✅ key fix
       razorpay_order_id,
       razorpay_payment_id,
       razorpay_signature,
@@ -185,4 +185,3 @@ router.get('/admin/payments', async (req, res) => {
 
 // ✅ keep exporting your router:
 module.exports = router;
-
