@@ -26,13 +26,10 @@ router.get('/courses', async (req, res) => {
   }
 });
 
-
-// ✅ Get all enrollments (with user_id only)
+// ✅ Get all enrollments
 router.get('/enrollments', async (req, res) => {
   try {
-    const enrollments = await Enrollment.find()
-      .sort({ enrolled_at: -1 }); // 👈 No populate
-
+    const enrollments = await Enrollment.find().sort({ enrolled_at: -1 });
     const formatted = enrollments.map(e => ({
       id: e._id,
       user_id: e.user_id?.toString() || null,
@@ -40,7 +37,6 @@ router.get('/enrollments', async (req, res) => {
       price: e.price,
       enrolled_at: e.enrolled_at
     }));
-
     res.json({ success: true, enrollments: formatted });
   } catch (err) {
     console.error('Enrollment fetch error:', err);
@@ -48,27 +44,23 @@ router.get('/enrollments', async (req, res) => {
   }
 });
 
-
-
 // ✅ Get all payments
 router.get('/payments', async (req, res) => {
   try {
     const payments = await Payment.find()
-  .populate('user_id', 'name email')
-  .sort({ payment_date: -1 });
+      .populate('user_id', 'name email')
+      .sort({ payment_date: -1 });
 
-
-
-   const formatted = payments.map(p => ({
-  id: p._id,
-  receipt_id: p.receipt_id,
-  amount: p.amount,
-  status: p.status,
-  payment_date: p.payment_date,
-  user_name: p.user_id?.name || 'N/A',
-  email: p.user_id?.email || '',
-  course_title: p.course_name || 'N/A', // ✅ Use course_name instead of populated title
-}));
+    const formatted = payments.map(p => ({
+      id: p._id,
+      receipt_id: p.receipt_id,
+      amount: p.amount,
+      status: p.status,
+      payment_date: p.payment_date,
+      user_name: p.user_id?.name || 'N/A',
+      email: p.user_id?.email || '',
+      course_title: p.course_name || 'N/A',
+    }));
 
     res.json({ success: true, payments: formatted });
   } catch (err) {
@@ -76,7 +68,6 @@ router.get('/payments', async (req, res) => {
     res.status(500).json({ success: false, error: 'Failed to fetch payments' });
   }
 });
-
 
 // ✅ Get dashboard stats
 router.get('/stats', async (req, res) => {
