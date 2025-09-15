@@ -148,10 +148,10 @@ exports.getUserCourses = async (req, res) => {
     const enrollments = await Enrollment.find({ user_id: userId }).lean();
 
     const courses = await Promise.all(enrollments.map(async (e) => {
-      const courseDoc = await Course.findOne({ title: e.course_name });
+      const courseDoc = await Course.findOne({ course_name: e.course_name });
       const payment = await Payment.findOne({
   user_id: new mongoose.Types.ObjectId(userId),
-  course_name: e.course_name,
+  title: e.course_name,
 });
 
       return {
@@ -234,4 +234,3 @@ exports.resetPasswordWithOtp = async (req, res) => {
   }
 };
 const Payment = require('../models/Payment'); // Add this at the top if not already
-
